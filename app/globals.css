@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-dark-800;
+  }
+  
+  body {
+    @apply bg-dark-950 text-white antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-20 md:py-32;
+  }
+
+  .heading-hero {
+    @apply text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1];
+  }
+
+  .heading-section {
+    @apply text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-6;
+  }
+  
+  .italic-accent {
+    @apply italic font-light;
+  }
+
+  .heading-subsection {
+    @apply text-2xl md:text-3xl font-semibold mb-4;
+  }
+
+  .text-body {
+    @apply text-base md:text-lg text-dark-400 leading-relaxed;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-purple to-primary-600 hover:from-purple-dark hover:to-primary-700 
+           text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 
+           hover:shadow-2xl shadow-purple/50;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 bg-transparent hover:bg-dark-800 text-white font-semibold rounded-full 
+           transition-all duration-300 transform hover:scale-105 border-2 border-white/20 hover:border-white/40;
+  }
+
+  .card {
+    @apply bg-dark-900 border border-dark-800 rounded-xl p-8 transition-all duration-300 
+           hover:border-dark-700 hover:shadow-xl hover:transform hover:scale-105;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-dark-900/50 backdrop-blur-md border border-dark-800;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 4s ease infinite;
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dark-600;
+}
+
+/* File upload drag and drop styles */
+.file-upload-area {
+  @apply border-2 border-dashed border-dark-700 rounded-xl p-12 text-center 
+         transition-all duration-300 cursor-pointer;
+}
+
+.file-upload-area:hover {
+  @apply border-primary-600 bg-dark-900/50;
+}
+
+.file-upload-area.drag-active {
+  @apply border-primary-500 bg-primary-950/20 scale-[1.02];
+}
+
